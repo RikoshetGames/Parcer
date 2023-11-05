@@ -7,18 +7,22 @@ class Saver(ABC):
     """Абстрактный класс для редактирования и обработки списка вакансий"""
     @abstractmethod
     def save_vacancies(self):
+        """Метод для сохранения вакансий"""
         pass
 
     @abstractmethod
     def read_file(self):
+        """Метод для считывания данных из файла JSON"""
         pass
 
     @abstractmethod
     def read_vacancies(self):
+        """Метод для вывода вакансий"""
         pass
 
     @abstractmethod
     def remove_vacancies(self):
+        """Метод для удаления вакансий"""
         pass
 
 

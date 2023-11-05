@@ -3,6 +3,7 @@ from src.interface_func import *
 
 
 def user_interface():
+    """Интерфейс приложения"""
     print(f"Добро пожаловать!\n"
           f"Вас приветствует приложение для поиска вакансий.")
     while True:

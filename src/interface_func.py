@@ -4,6 +4,7 @@ from src.vacancy import *
 
 
 def search_vacancies():
+    """Функция поиска вакансий"""
     hh_api = HeadHunterAPI()
     superjob_api = SuperJobAPI()
     print()
@@ -49,6 +50,7 @@ def search_vacancies():
         print("Некорректный ввод")
 
 def remove_vacancies():
+    """Функция удаления вакансий"""
     try:
         print()
         print("Выберите вакансию, которую хотите удалить:")

@@ -66,17 +66,21 @@ class Vacancies:
         self.__all_vacancies = []
 
     def add_vacancies(self, new_vacancies):
+        """Метод для добавления вакансий"""
         self.__all_vacancies += new_vacancies
 
 
     def sort_vacancies_by_salary(self):
+        """Метод для сортировки вакансий по зарплате"""
         self.__all_vacancies.sort(reverse=True)
 
     @property
     def all_vacancies(self):
+        """Метод для получения всех вакансий"""
         return self.__all_vacancies
 
     def to_list_dict(self):
+        """Метод для перевода вакансий в список словарей"""
         a = []
         for item in self.__all_vacancies:
             a.append(item.to_dict())
