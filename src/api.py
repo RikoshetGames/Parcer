@@ -63,16 +63,16 @@ class SuperJobAPI(JobAPI):
             param = {'keyword': name_job, 'count': 3, 'page': item}
             reques = requests.get(url, params=param, headers=head)
             element = reques.json()
-            for j in element['objects']:
-                job_id = str(j['id'])
-                job_url = j['link']
-                name = j['profession']
-                salary_from = j['payment_from']
-                salary_to = j['payment_to']
-                if j['address'] is None:
+            for job in element['objects']:
+                job_id = str(job['id'])
+                job_url = job['link']
+                name = job['profession']
+                salary_from = job['payment_from']
+                salary_to = job['payment_to']
+                if job['address'] is None:
                     city = None
                 else:
-                    city = j['address'].split(',')[0]
+                    city = job['address'].split(',')[0]
                 vacanc = Vacancy(job_id, job_url, name, salary_from, salary_to, city)
                 ans.append(vacanc)
         return ans
