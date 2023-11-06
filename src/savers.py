@@ -30,11 +30,13 @@ class JSONSaver(Vacancies, Saver):
     """Класс для обработки списка вакансий в JSON формате"""
     FILE_PATH = 'vacancies.json'
     def save_vacancies(self):
-        with open(self.FILE_PATH, 'w', encoding='utf-8') as fh:
+        user_title = input("Введите название файла для сохранения: ")
+        with open(user_title, 'w', encoding='utf-8') as fh:
             json.dump(self.to_list_dict(), fh, indent=4, ensure_ascii=False)
 
     def read_file(self):
-        with open(self.FILE_PATH, 'r', encoding='utf-8') as file:
+        user_title = input("Введите название файла для прочтения: ")
+        with open(user_title, 'r', encoding='utf-8') as file:
             self.data = json.load(file)
             return self.data
 
@@ -58,6 +60,6 @@ class JSONSaver(Vacancies, Saver):
 
         removed_dict = data.pop(index_to_remove)
         print(removed_dict)
-
-        with open(self.FILE_PATH, 'w', encoding='utf-8') as file:
+        user_title = input("Введите название файла для сохранения: ")
+        with open(user_title, 'w', encoding='utf-8') as file:
             json.dump(data, file, indent=4, ensure_ascii=False)

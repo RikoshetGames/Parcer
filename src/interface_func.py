@@ -53,9 +53,10 @@ def remove_vacancies():
     """Функция удаления вакансий"""
     try:
         print()
-        print("Выберите вакансию, которую хотите удалить:")
         vacancy_remover = JSONSaver()
         vacancy_remover.remove_vacancies()
         print()
+    except FileNotFoundError:
+        print('Файл не найден')
     except ValueError:
         print("Некорректный ввод")
